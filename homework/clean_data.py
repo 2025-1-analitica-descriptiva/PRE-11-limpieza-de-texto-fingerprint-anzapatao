@@ -4,6 +4,12 @@
 #
 
 import nltk  # type: ignore
+# Descarga los recursos necesarios para el stemmer
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 import pandas as pd  # type: ignore
 
 def load_data(input_file):
